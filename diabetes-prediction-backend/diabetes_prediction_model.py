@@ -981,37 +981,37 @@ fig.update_xaxes(title_text="<b>Income Level</b>", row=2, col=2, title_font=dict
 
 fig.show()
 
-"""- Theo giới tính (Sex):
-  - Không có sự khác biệt lắm, cả nam và nữ đều có tỷ lệ mắc bệnh tương tự.
+    """- Theo giới tính (Sex):
+    - Không có sự khác biệt lắm, cả nam và nữ đều có tỷ lệ mắc bệnh tương tự.
 
-- Theo nhóm tuổi (Age Group):
-  - Tỷ lệ mắc tiểu đường tăng rất rõ theo tuổi tác.
-  - Nhóm tuổi trẻ (18–44 tuổi): rất thấp (chỉ 2–5%).
-  - Từ 45 tuổi trở lên bắt đầu tăng mạnh, đạt đỉnh ở nhóm 55–59 tuổi (khoảng 22%).
-  - Sau 60 tuổi vẫn duy trì ở mức cao (18–22%), nhóm 80+ giảm nhẹ xuống còn ~18%.
+    - Theo nhóm tuổi (Age Group):
+    - Tỷ lệ mắc tiểu đường tăng rất rõ theo tuổi tác.
+    - Nhóm tuổi trẻ (18–44 tuổi): rất thấp (chỉ 2–5%).
+    - Từ 45 tuổi trở lên bắt đầu tăng mạnh, đạt đỉnh ở nhóm 55–59 tuổi (khoảng 22%).
+    - Sau 60 tuổi vẫn duy trì ở mức cao (18–22%), nhóm 80+ giảm nhẹ xuống còn ~18%.
 
-→ Tuổi tác là yếu tố nguy cơ mạnh nhất của bệnh tiểu đường loại 2.
+    → Tuổi tác là yếu tố nguy cơ mạnh nhất của bệnh tiểu đường loại 2.
 
-- Theo trình độ học vấn (Education Level):
-  - Người có trình độ học vấn càng thấp thì tỷ lệ mắc tiểu đường càng cao.
-  - Không tốt nghiệp phổ thông: ~27%
-  - Tốt nghiệp phổ thông: ~24,3%
-  - Một phần đại học: ~24,3%
-  - Tốt nghiệp đại học trở lên: chỉ còn 11,6–15,5%
+    - Theo trình độ học vấn (Education Level):
+    - Người có trình độ học vấn càng thấp thì tỷ lệ mắc tiểu đường càng cao.
+    - Không tốt nghiệp phổ thông: ~27%
+    - Tốt nghiệp phổ thông: ~24,3%
+    - Một phần đại học: ~24,3%
+    - Tốt nghiệp đại học trở lên: chỉ còn 11,6–15,5%
 
-→ Người ít học có nguy cơ mắc tiểu đường cao gấp đôi so với người có bằng đại học/cử nhân.
+    → Người ít học có nguy cơ mắc tiểu đường cao gấp đôi so với người có bằng đại học/cử nhân.
 
-- Theo mức thu nhập (Income Level):
-  - Thu nhập càng thấp thì tỷ lệ mắc tiểu đường càng cao.
-  - Nhóm thu nhập <10k/năm: 24,3%
-  - Nhóm 10–25k: ~22–23%
-  - Nhóm thu nhập cao nhất (>75k/năm): chỉ còn 8,8%
+    - Theo mức thu nhập (Income Level):
+    - Thu nhập càng thấp thì tỷ lệ mắc tiểu đường càng cao.
+    - Nhóm thu nhập <10k/năm: 24,3%
+    - Nhóm 10–25k: ~22–23%
+    - Nhóm thu nhập cao nhất (>75k/năm): chỉ còn 8,8%
 
-→ Có mối liên hệ ngược rất rõ ràng giữa thu nhập và tỷ lệ mắc tiểu đường: nghèo → nguy cơ cao gấp gần 3 lần so với người giàu.
+    → Có mối liên hệ ngược rất rõ ràng giữa thu nhập và tỷ lệ mắc tiểu đường: nghèo → nguy cơ cao gấp gần 3 lần so với người giàu.
 
-- Bệnh tiểu đường phổ biến nhất ở những người: lớn tuổi, nam giới, trình độ học vấn thấp, và đặc biệt là thu nhập thấp.
-- Yếu tố kinh tế - xã hội (thu nhập và học vấn) có ảnh hưởng cực kỳ mạnh đến tỷ lệ mắc bệnh tiểu đường, thậm chí còn rõ rệt hơn cả yếu tố giới tính.
-- Tuổi tác vẫn là yếu tố nguy cơ quan trọng nhất, nhưng trong cùng độ tuổi, người nghèo và ít học vẫn có nguy cơ cao hơn rất nhiều.
+    - Bệnh tiểu đường phổ biến nhất ở những người: lớn tuổi, nam giới, trình độ học vấn thấp, và đặc biệt là thu nhập thấp.
+    - Yếu tố kinh tế - xã hội (thu nhập và học vấn) có ảnh hưởng cực kỳ mạnh đến tỷ lệ mắc bệnh tiểu đường, thậm chí còn rõ rệt hơn cả yếu tố giới tính.
+    - Tuổi tác vẫn là yếu tố nguy cơ quan trọng nhất, nhưng trong cùng độ tuổi, người nghèo và ít học vẫn có nguy cơ cao hơn rất nhiều.
 """
 
 diffwalk_stats = calc_stats('DiffWalk')

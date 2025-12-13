@@ -7,17 +7,7 @@ input_features = [
     'HighChol', 
     'BMI', 
     'Stroke', 
-    'PhysActivity', 
-    'HeartDiseaseorAttack', 
-    'GenHlth', 
-    'PhysHlth', 
-    'Income', 
-    'Education', 
-    'Age', 
-    'DiffWalk', 
-    'CholCheck', 
-    'HvyAlcoholConsump', 
-    'MentHlth'
+    'PhysActivity'
 ]
 
 from fastapi import FastAPI
@@ -44,26 +34,28 @@ class DiabetesInput(BaseModel):
     BMI: float
     Stroke: float
     PhysActivity: float
-    HeartDiseaseorAttack: float
-    GenHlth: float
-    PhysHlth: float
-    Income: float
-    Education: float
-    Age: float
-    DiffWalk: float
-    CholCheck: float
-    HvyAlcoholConsump: float
-    MentHlth: float
 
 @app.post("/predict")
 async def predict_diabetes(input_data: DiabetesInput):
     try:
         input_dict = input_data.dict()
-        input = [input_dict[feature] for feature in input_features]
-        prediction = reg.predict([input])
-        diabetes_risk = bool(prediction[0])
+        X = [[input_dict[feature] for feature in input_features]]
+
+        # Dự đoán xác suất
+        proba = reg.predict_proba(X)[0]
+        prob_no_diabetes = float(proba[0])
+        prob_diabetes = float(proba[1])
+
+        # Nhãn dự đoán
+        prediction = int(prob_diabetes >= 0.5)
+
         return {
-            "diabetes_risk": diabetes_risk
+            "diabetes_risk": bool(prediction),
+            "probability": {
+                "no_diabetes": round(prob_no_diabetes * 100, 2),
+                "diabetes": round(prob_diabetes * 100, 2)
+            }
         }
+
     except Exception as e:
         return {"error": str(e)}

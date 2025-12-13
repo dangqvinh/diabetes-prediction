@@ -6,27 +6,17 @@ const Home = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [result, setResult] = useState(null);
 
-  const handleFormSubmit = async (healthData) => {
+  const handleFormSubmit = async (healthData, predictionResponse) => {
     setIsProcessing(true);
-    
-    setTimeout(() => {
-      const bmi = parseFloat(healthData.BMI) || 25;
-      const age = parseInt(healthData.Age) || 5;
-      const highBP = healthData.HighBP || 0;
-      const highChol = healthData.HighChol || 0;
-      
-      const riskScore = (bmi / 70) * 0.3 + (age / 13) * 0.3 + highBP * 0.2 + highChol * 0.2;
-      const prediction = riskScore > 0.4 ? 'positive' : 'negative';
-      const confidence = (riskScore > 0.4 ? riskScore * 100 : (1 - riskScore) * 100).toFixed(1);
-      
-      setResult({
-        prediction,
-        confidence,
-        healthData
-      });
-      setIsProcessing(false);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 1500);
+
+    const finalResult = {
+      ...predictionResponse,
+      healthData: healthData,
+    }
+
+    setResult(finalResult);
+    setIsProcessing(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleReset = () => {

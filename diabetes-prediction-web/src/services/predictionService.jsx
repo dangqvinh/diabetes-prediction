@@ -6,17 +6,7 @@ export const predictDiabetes = async (healthData) => {
     'HighChol' : healthData.HighChol, 
     'BMI' : healthData.BMI, 
     'Stroke' : healthData.Stroke, 
-    'PhysActivity' : healthData.PhysActivity, 
-    'HeartDiseaseorAttack' : healthData.HeartDiseaseorAttack, 
-    'GenHlth' : healthData.GenHlth, 
-    'PhysHlth' : healthData.PhysHlth, 
-    'Income' : healthData.Income, 
-    'Education' : healthData.Education, 
-    'Age' : healthData.Age, 
-    'DiffWalk' : healthData.DiffWalk, 
-    'CholCheck' : healthData.CholCheck, 
-    'HvyAlcoholConsump' : healthData.HvyAlcoholConsump, 
-    'MentHlth' : healthData.MentHlth
+    'PhysActivity' : healthData.PhysActivity
   }
   console.log("Request Data: ", request_data);
 
@@ -31,3 +21,4 @@ export const predictDiabetes = async (healthData) => {
   return result;
 
 };
+
